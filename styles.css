@@ -1,0 +1,237 @@
+:root {
+  --primary: #6574d6;
+  --white: #ffffff;
+  --text-dark: #1e2330;
+  --radius-lg: 3.75rem;
+  --shadow-soft: 0 20px 60px rgba(28, 36, 58, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Josefin Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: radial-gradient(circle at top, rgba(101, 116, 214, 0.15), transparent 55%),
+    #f7f7fb;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.5rem, 4vw, 4rem) clamp(1rem, 4vw, 3rem);
+}
+
+.page {
+  width: 100%;
+  max-width: 75rem;
+}
+
+.hero {
+  background: var(--primary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(2rem, 5vw, 4rem);
+}
+
+.hero-visual {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-cover {
+  display: block;
+  width: 100%;
+  height: clamp(18rem, 35vw, 26rem);
+  object-fit: cover;
+}
+
+.hero-avatar {
+  position: absolute;
+  inset: clamp(1.25rem, 4vw, 2rem) auto auto clamp(1.25rem, 4vw, 2rem);
+  width: clamp(6.5rem, 18vw, 10rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: clamp(0.35rem, 1.5vw, 0.5rem) solid var(--white);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: clamp(0.5rem, 2vw, 1rem);
+}
+
+.brand {
+  margin: 0;
+  font-family: "Jeju Gothic", "Josefin Sans", sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  letter-spacing: 0.03em;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem clamp(1.5rem, 4vw, 3rem);
+  border-radius: 999px;
+  border: 2px solid var(--white);
+  color: var(--white);
+  text-decoration: none;
+  font-size: clamp(1rem, 2.4vw, 1.5rem);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pill:hover,
+.pill:focus {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.hero-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.hero-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 32rem;
+}
+
+.hero-subtitle {
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.hero-address {
+  margin: 0;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 400;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.btn {
+  min-width: clamp(10rem, 32vw, 18rem);
+  padding: clamp(0.85rem, 2.4vw, 1.3rem) clamp(2rem, 6vw, 4rem);
+  border-radius: 999px;
+  text-align: center;
+  font-family: "Jeju Gothic", "Josefin Sans", sans-serif;
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease,
+    color 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline {
+  color: var(--white);
+  border: 3px solid var(--white);
+  background: transparent;
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-solid {
+  background: var(--white);
+  color: var(--primary);
+  border: 3px solid var(--white);
+}
+
+.btn-solid:hover,
+.btn-solid:focus {
+  background: #f4f4ff;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: clamp(1.75rem, 5vw, 3rem);
+  }
+
+  .hero-avatar {
+    inset: clamp(1rem, 3vw, 1.75rem) auto auto clamp(1rem, 3vw, 1.75rem);
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: clamp(1rem, 4vw, 2rem);
+  }
+
+  .hero {
+    border-radius: clamp(2.5rem, 8vw, 3.5rem);
+    padding: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  .hero-visual {
+    border-radius: clamp(2.5rem, 8vw, 3.5rem);
+  }
+
+  .hero-cover {
+    height: clamp(15rem, 45vw, 22rem);
+  }
+
+  .hero-avatar {
+    width: clamp(5.25rem, 30vw, 7.5rem);
+    border-width: clamp(0.3rem, 1.2vw, 0.45rem);
+  }
+
+  .hero-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pill {
+    width: 100%;
+  }
+
+  .hero-info {
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
